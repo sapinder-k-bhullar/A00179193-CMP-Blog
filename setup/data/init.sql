@@ -10,4 +10,4 @@ CREATE TABLE authors (
     lastLoginDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO authors(emailId, pass_hash, firstname, lastname, biography) VALUES ("simmi08979@gmail.com","simmi@123","sapinder","bhullar", "student in cambrian college");
+INSERT INTO authors(emailId, pass_hash, firstname, lastname, biography) VALUES ("simmi08979@gmail.com","simmibhullar@123","sapinder","bhullar", "student in cambrian college");

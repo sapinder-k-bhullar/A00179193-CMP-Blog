@@ -12,6 +12,16 @@ class Test extends Controller {
         $this->view("template/footer");
     } 
 
+    function Login() {
+        $this->model("AccountModel");
+        $auth = $this->AccountModel->authenticateAccount('simmi08979@gmail.com','55555555');
+        if($auth) {
+            echo("Authenticated!!");
+        } else {
+            echo("Not Authenticated!!");
+        }
+    }
+
 }
 
 ?>
