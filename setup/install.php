@@ -23,8 +23,6 @@
 
                         $sql = file_get_contents("setup/data/init.sql");
 
-                        
-
                         $this->db->exec($sql);
 
                         echo "Database setup successfully.\n";
