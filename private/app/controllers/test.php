@@ -13,8 +13,8 @@ class Test extends Controller {
     } 
 
     function Login() {
-        $this->model("AccountModel");
-        $auth = $this->AccountModel->authenticateAccount('simmi08979@gmail.com','55555555');
+        $this->model("usermodel");
+        $auth = $this->accountmodel->authenticateUser('simmi08979@gmail.com','55555555');
         if($auth) {
             echo("Authenticated!!");
         } else {
