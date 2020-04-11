@@ -1,6 +1,6 @@
 <?php
 
-class usermodel extends Model {
+class UserModel extends Model {
 
     function __construct() {
         parent::__construct();

@@ -16,6 +16,10 @@ class Main extends Controller {
         $this->view("main/index");
         echo($_SESSION['test']);
         $this->view("template/footer");
+       
+        }
+
+       
         
     }
 
@@ -32,6 +36,6 @@ class Main extends Controller {
         phpinfo();
     }
 
-}
+
 
 ?>

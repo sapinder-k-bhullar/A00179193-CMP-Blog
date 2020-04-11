@@ -17,8 +17,16 @@ class Test extends Controller {
         $auth = $this->usermodel->authenticateUser('simmi08979@gmail.com','55555555');
         if($auth) {
             echo("Authenticated!!");
+            echo($_SESSION['firstname'] . "<br>");
+            echo($_SESSION['lastname'] . "<br>");
+            echo($_SESSION['username'] . "<br>");
+
         } else {
             echo("Not Authenticated!!");
+            echo($_SESSION['firstname'] . "<br>");
+            echo($_SESSION['lastname'] . "<br>");
+            echo($_SESSION['username'] . "<br>");
+            
         }
     }
 
