@@ -7,8 +7,8 @@ class accountmodel extends Model {
     }
 
     function authenticateAccount($username, $password) {
-        $cl_name = htmlentities($username);
-        $cl_pass = htmlentities($password);
+        $cl_name = $username;
+        $cl_pass = $password;
 
         $sql = "SELECT 'firstname', 'lastname', 'pass_hash' FROM 'userauthors' WHERE email = ?";
         $stmt = $this->db->prepare($sql);

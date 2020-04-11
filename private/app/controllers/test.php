@@ -20,15 +20,21 @@ class Test extends Controller {
     } 
 
     function Login() {
-        $this->model("accountmodel");
-        $auth = $this->accountmodel->authenticateAccount('simmi08979@gmail.com','55555555');
-        if($auth) {
-            header("location: /test/");
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+            $this->model("accountmodel");
+            $cl_name = htmlentities($_POST["username"]);
+            $cl_pass = htmlentities($_POST["pass"]);
+            $auth = $this->accountmodel->authenticateAccount($cl_name, $cl_pass);
+            if($auth) {
+                header("location: /test/");
+            } else {
+                echo("Not Authenticated!!");
+            }
         } else {
-            echo("Not Authenticated!!");
-          
-            
+            $this->view("test/login");
         }
+
+        
     }
 
     function Logout() {
