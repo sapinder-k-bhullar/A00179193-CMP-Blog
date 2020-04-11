@@ -21,7 +21,7 @@ class Main extends Controller {
 
        
         
-    }
+    
 
     function Other () {
 
@@ -36,6 +36,6 @@ class Main extends Controller {
         phpinfo();
     }
 
-
+}
 
 ?>

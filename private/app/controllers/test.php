@@ -8,26 +8,35 @@ class Test extends Controller {
 
     function Index () {
         $this->view("template/header");
-        $this->view("test/test");
+        //print_r($_SESSION);
+        $_auth = isset($_SESSION["username"]);
+        if($_auth) {
+             $this->view("test/auth");
+        } else {
+             $this->view("test/noauth");
+        }
+        //$this->view("test/test");
         $this->view("template/footer");
     } 
 
     function Login() {
-        $this->model("usermodel");
-        $auth = $this->usermodel->authenticateUser('simmi08979@gmail.com','55555555');
+        $this->model("accountmodel");
+        $auth = $this->accountmodel->authenticateAccount('simmi08979@gmail.com','55555555');
         if($auth) {
-            echo("Authenticated!!");
-            echo($_SESSION['firstname'] . "<br>");
-            echo($_SESSION['lastname'] . "<br>");
-            echo($_SESSION['username'] . "<br>");
-
+            header("location: /test/");
         } else {
             echo("Not Authenticated!!");
-            echo($_SESSION['firstname'] . "<br>");
-            echo($_SESSION['lastname'] . "<br>");
-            echo($_SESSION['username'] . "<br>");
+          
             
         }
+    }
+
+    function Logout() {
+        session_unset();
+        session_destroy();
+        $_SESSION = Array();
+        header("location: /test/");
+
     }
 
 }
