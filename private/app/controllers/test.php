@@ -21,20 +21,32 @@ class Test extends Controller {
 
     function Login() {
         if($_SERVER["REQUEST_METHOD"] == "POST") {
-            $this->model("accountmodel");
-            $cl_name = htmlentities($_POST["username"]);
-            $cl_pass = htmlentities($_POST["pass"]);
-            $auth = $this->accountmodel->authenticateAccount($cl_name, $cl_pass);
-            if($auth) {
-                header("location: /test/");
-            } else {
-                echo("Not Authenticated!!");
-            }
+            $post_csrf = htmlentities($_POST["csrf"]);
+            $cook_csrf = htmlentities($_COOKIE["csrf"]);
+            $csrf = $_SESSION["csrf"];
+
+            if($csrf == $post_csrf && $csrf == $cook_csrf) {
+
+                $this->model("accountmodel");
+                $cl_name = htmlentities($_POST["username"]);
+                $cl_pass = htmlentities($_POST["password"]);
+
+                $_auth = $this->accountmodel->authenticateAccount($cl_name, $cl_pass);
+                if($_auth) {
+                    header("location: /test/");
+                } else {
+                    echo("Not Authenticated!!");
+                }
+            } 
         } else {
-            $this->view("test/login");
+            $csrf = htmlentities(random_int(10000, 100000000));
+            $_SESSION['csrf'] = $csrf;
+            setcookie("csrf", $csrf);
+            $_COOKIE['csrf'] = $csrf;
+            $this->view("test/login", array("csrf" => $csrf));
         }
 
-        
+    
     }
 
     function Logout() {
@@ -46,5 +58,4 @@ class Test extends Controller {
     }
 
 }
-
-?> 
+?>

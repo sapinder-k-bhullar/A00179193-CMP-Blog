@@ -14,13 +14,10 @@ class Main extends Controller {
         echo($pass);
         $this->view("template/header");
         $this->view("main/index");
-        echo($_SESSION['test']);
+        //echo($_SESSION['test']);
         $this->view("template/footer");
        
         }
-
-       
-        
     
 
     function Other () {
