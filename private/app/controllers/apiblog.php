@@ -18,7 +18,7 @@ class Apiblog extends Controller {
     function Read($postId) {
          $this->model("BlogModel");  
          $posts = $this->BlogModel->getPostById($postId);
-         $this->view("template/header", $posts);
+         $this->view("blog/header", $posts);
          $this->view("blog/posts", $posts);
          $this->view("template/footer");
 
@@ -26,7 +26,21 @@ class Apiblog extends Controller {
     }
 
     function Create() {
+         $_auth = isset($_SESSION["username"]);
 
+          if ($_auth) {
+               header("location: /apiblog");
+               return;
+          }
+
+
+         if($_SERVER["REQUEST_METHOD"] == "POST") {
+         
+           
+         } else {
+             echo("Hii");
+           
+         }
     }
 }
 

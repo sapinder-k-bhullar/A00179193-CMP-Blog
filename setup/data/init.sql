@@ -23,6 +23,5 @@ CREATE TABLE post (
         REFERENCES userauthors (email)
 );
 
-INSERT INTO 'post' (slug, title, content, author)
-VALUES ("post-a", "Online Learning", "<article><h2>Online Learning</h2><section><p>Online learning is when you take courses online instead of in a physical classroom.</p></section></article>","simmi08979@gmail.com");
+INSERT INTO 'post' (slug, title, content, author) VALUES ("post-a", "Online Learning", "<article><h2>Online Learning</h2><section><p>Online learning is when you take courses online instead of in a physical classroom.</p></section></article>","simmi08979@gmail.com");
 
