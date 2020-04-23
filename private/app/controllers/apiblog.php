@@ -15,7 +15,13 @@ class Apiblog extends Controller {
         $this->view("template/footer");
     }
 
-    function Read($blogId) {
+    function Read($postId) {
+         $this->model("BlogModel");  
+         $posts = $this->BlogModel->getPostById($postId);
+         $this->view("template/header", $posts);
+         $this->view("blog/posts", $posts);
+         $this->view("template/footer");
+
 
     }
 
