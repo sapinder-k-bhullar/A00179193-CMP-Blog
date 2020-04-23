@@ -10,7 +10,7 @@ class accountmodel extends Model {
         $cl_name = $username;
         $cl_pass = $password;
 
-        $sql = "SELECT 'firstname', 'lastname', 'pass_hash' FROM 'userauthors' WHERE email = ?";
+        $sql = "SELECT 'firstname', 'lastname', 'pass_hash' FROM 'userauthors' WHERE 'email' = ?";
         $stmt = $this->db->prepare($sql);
         $count = $stmt->execute(Array($cl_name));
         $row = $stmt->fetch();
