@@ -1,7 +1,7 @@
 USE CMS;
 
 CREATE TABLE userauthors (
-    email VARCHAR(128) NOT NULL PRIMARY KEY,
+    email VARCHAR(128) PRIMARY KEY,
     pass_hash varchar(255) NOT NULL,
     firstname VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL,

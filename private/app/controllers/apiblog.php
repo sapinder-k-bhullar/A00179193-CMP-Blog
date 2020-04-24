@@ -28,7 +28,7 @@ class Apiblog extends Controller {
     function Create() {
          $_auth = isset($_SESSION["username"]);
 
-          if ($_auth) {
+          if (!$_auth) {
                header("location: /apiblog");
                return;
           }
@@ -38,7 +38,7 @@ class Apiblog extends Controller {
          
            
          } else {
-             echo("Hii");
+            $this->view("");
            
          }
     }
