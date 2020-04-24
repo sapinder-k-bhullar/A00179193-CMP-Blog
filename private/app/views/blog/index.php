@@ -3,7 +3,7 @@
 <ul>
 <?php
     foreach($post as $posts) {
-        echo("<li><a href=\"\\apiblog\\read\\" . $posts["slug"] . "\">" . $posts["title"] . "</a> - <time>" . $posts["post_date"] . "</time>");
+        echo("<li><a href=\"\\blog\\read\\" . $posts["slug"] . "\">" . $posts["title"] . "</a> - <time>" . $posts["post_date"] . "</time>");
     }
 ?>
 </ul>
