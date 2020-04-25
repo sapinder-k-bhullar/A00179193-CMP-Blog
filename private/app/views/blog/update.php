@@ -1,5 +1,5 @@
-<h1>  Edit Post</h1>
-<form method="POST" action ="/blog/update">
+<h1>Update a Post</h1>
+<form method="POST" action ="/blog/create">
     <input type="hidden" value="" name="csrf">
     <label for="title">Title</label>
     <input type="text" id="title" name="title">

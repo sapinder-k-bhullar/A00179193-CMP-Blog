@@ -11,7 +11,7 @@ class Main extends Controller {
      */
     function Index () {
         $pass = password_hash("55555555", PASSWORD_DEFAULT);
-        echo($pass);
+       // echo($pass);
         $this->view("template/header");
         $this->view("main/index");
         //echo($_SESSION['test']);

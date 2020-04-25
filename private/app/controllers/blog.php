@@ -42,7 +42,7 @@ class blog extends Controller {
               $this->model("BlogModel");
               $slug=$this->BlogModel->createPost($title,$author,$content);
 
-             header("location: /blog/read" .$slug);
+             header("location: /blog/read" . $slug);
 
          
            
