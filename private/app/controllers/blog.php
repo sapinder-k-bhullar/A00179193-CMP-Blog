@@ -37,8 +37,8 @@ class blog extends Controller {
 
          if($_SERVER["REQUEST_METHOD"] == "POST") {
               $title = $_POST["title"];
-              $content = $_POST["content"];
               $author = $_SESSION["username"];
+              $content = $_POST["content"];
               $this->model("BlogModel");
               $slug=$this->BlogModel->createPost($title,$author,$content);
 
@@ -53,6 +53,8 @@ class blog extends Controller {
            
          }
     }
+
+
 }
 
 
